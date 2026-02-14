@@ -1,114 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaysan Arya | Zynn Cloud</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kaysan Arya | Zynn Cloud</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --primary:#2563EB;
-      --bg:#0F172A;
-      --text:#F8FAFC;
-      --muted:#94A3B8;
-    }
+<style>
+:root{
+  --primary:#2563EB;
+  --accent:#3B82F6;
+  --bg:#0F172A;
+  --card:#111827;
+  --text:#F8FAFC;
+  --muted:#94A3B8;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Inter',sans-serif;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
 
-    body{
-      background:var(--bg);
-      color:var(--text);
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-    }
+body{
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
 
-    h1{
-      font-size:3rem;
-      font-weight:700;
-      margin-bottom:1rem;
-      background:linear-gradient(to right,#3B82F6,#60A5FA);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    p{
-      color:var(--muted);
-      max-width:600px;
-      margin-bottom:2rem;
-      font-size:1.1rem;
-    }
+h1{
+  font-size:3.5rem;
+  font-weight:700;
+  background:linear-gradient(to right,#3B82F6,#60A5FA);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    .buttons{
-      display:flex;
-      gap:1rem;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+h2{
+  font-size:2rem;
+  margin-bottom:20px;
+}
 
-    a{
-      text-decoration:none;
-      padding:12px 24px;
-      border-radius:8px;
-      font-weight:600;
-      transition:0.3s ease;
-    }
+p{
+  color:var(--muted);
+  line-height:1.6;
+}
 
-    .primary{
-      background:var(--primary);
-      color:white;
-    }
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(15,23,42,0.8);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  z-index:1000;
+}
 
-    .primary:hover{
-      background:#1E40AF;
-      transform:translateY(-2px);
-    }
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:20px;
+  transition:0.3s;
+}
 
-    .outline{
-      border:1px solid rgba(255,255,255,0.2);
-      color:white;
-    }
+nav a:hover{
+  color:var(--primary);
+}
 
-    .outline:hover{
-      border-color:var(--primary);
-      transform:translateY(-2px);
-    }
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
 
-    footer{
-      position:absolute;
-      bottom:20px;
-      font-size:0.9rem;
-      color:var(--muted);
-    }
-  </style>
+.hero p{
+  max-width:600px;
+  margin:20px 0 40px;
+}
+
+.buttons{
+  display:flex;
+  gap:15px;
+}
+
+.btn{
+  padding:12px 26px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:white;
+}
+
+.btn-primary:hover{
+  background:#1E40AF;
+  transform:translateY(-3px);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+}
+
+.btn-outline:hover{
+  border-color:var(--primary);
+  transform:translateY(-3px);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--primary);
+}
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+@media(max-width:768px){
+  h1{font-size:2.5rem;}
+  nav{padding:15px 20px;}
+}
+</style>
 </head>
 
 <body>
 
+<nav>
+  <div><strong>Kaysan Arya</strong></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#notes">Notes</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
   <h1>Kaysan Arya</h1>
   <p>
-    High school student exploring technology, leadership, and digital projects.
-    This is my futuristic digital space.
+    High school student building digital projects, exploring technology,
+    and growing through leadership and continuous learning.
   </p>
-
   <div class="buttons">
-    <a href="#" class="primary">View Projects</a>
-    <a href="#" class="outline">About Me</a>
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="#about" class="btn btn-outline">About Me</a>
   </div>
+</section>
 
-  <footer>
-    © 2026 Kaysan Arya — Zynn.cloud
-  </footer>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a student who believes growth requires stepping out of the comfort zone.
+    Currently exploring technology, digital systems, and leadership development.
+  </p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>ELMO Geo Platform</h3>
+      <p>Geospatial AI-based platform using GeoNode, PostgreSQL, and Docker.</p>
+    </div>
+    <div class="card">
+      <h3>Personal Website</h3>
+      <p>This futuristic portfolio built with modern web fundamentals.</p>
+    </div>
+    <div class="card">
+      <h3>Design & Organization Work</h3>
+      <p>Posters, leadership programs, and school-level initiatives.</p>
+    </div>
+  </div>
+</section>
+
+<section id="notes">
+  <h2>Study Notes</h2>
+  <p>
+    Organized learning notes covering mathematics, science, and strategic thinking.
+    Built for clarity and long-term mastery.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+</section>
+
+<footer>
+  © 2026 Kaysan Arya — Zynn Cloud. Built with curiosity.
+</footer>
 
 </body>
 </html>
