@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kaysan Arya | Zynn Cloud</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --primary:#2563EB;
-  --accent:#3B82F6;
-  --bg:#0F172A;
-  --card:#111827;
-  --text:#F8FAFC;
-  --muted:#94A3B8;
+  --primary-light:#3B82F6;
+  --bg:#F8FAFC;
+  --dark:#0F172A;
+  --muted:#64748B;
+  --card:#FFFFFF;
 }
 
 *{
@@ -26,50 +26,28 @@
 
 body{
   background:var(--bg);
-  color:var(--text);
+  color:var(--dark);
   scroll-behavior:smooth;
-}
-
-section{
-  padding:100px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-h1{
-  font-size:3.5rem;
-  font-weight:700;
-  background:linear-gradient(to right,#3B82F6,#60A5FA);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-h2{
-  font-size:2rem;
-  margin-bottom:20px;
-}
-
-p{
-  color:var(--muted);
-  line-height:1.6;
 }
 
 nav{
   position:fixed;
-  top:0;
   width:100%;
-  background:rgba(15,23,42,0.8);
-  backdrop-filter:blur(10px);
+  top:0;
+  background:white;
+  padding:20px 60px;
   display:flex;
   justify-content:space-between;
-  padding:20px 40px;
+  align-items:center;
+  border-bottom:1px solid #E2E8F0;
   z-index:1000;
 }
 
 nav a{
-  color:var(--muted);
   text-decoration:none;
-  margin-left:20px;
+  color:var(--muted);
+  margin-left:30px;
+  font-weight:500;
   transition:0.3s;
 }
 
@@ -80,25 +58,43 @@ nav a:hover{
 .hero{
   min-height:100vh;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
+  padding:0 20px;
+  background:radial-gradient(circle at top right, rgba(37,99,235,0.15), transparent 40%);
+}
+
+.hero h1{
+  font-size:4rem;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.hero span{
+  background:linear-gradient(to right,var(--primary),var(--primary-light));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-  max-width:600px;
-  margin:20px 0 40px;
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:1.2rem;
+  margin-bottom:40px;
 }
 
 .buttons{
   display:flex;
-  gap:15px;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
 .btn{
-  padding:12px 26px;
-  border-radius:8px;
+  padding:14px 30px;
+  border-radius:10px;
   font-weight:600;
   text-decoration:none;
   transition:0.3s;
@@ -107,53 +103,98 @@ nav a:hover{
 .btn-primary{
   background:var(--primary);
   color:white;
+  box-shadow:0 10px 25px rgba(37,99,235,0.3);
 }
 
 .btn-primary:hover{
-  background:#1E40AF;
-  transform:translateY(-3px);
+  transform:translateY(-4px);
 }
 
 .btn-outline{
-  border:1px solid rgba(255,255,255,0.2);
-  color:white;
+  border:1px solid #CBD5E1;
+  color:var(--dark);
 }
 
 .btn-outline:hover{
   border-color:var(--primary);
-  transform:translateY(-3px);
+  color:var(--primary);
+  transform:translateY(-4px);
+}
+
+section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--muted);
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  margin-top:40px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
 
 .card{
   background:var(--card);
-  padding:30px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.05);
+  padding:40px;
+  border-radius:16px;
+  border:1px solid #E2E8F0;
   transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
-  border-color:var(--primary);
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.05);
+}
+
+.card h3{
+  margin-bottom:15px;
+}
+
+.card p{
+  color:var(--muted);
+}
+
+.cta-section{
+  text-align:center;
+  padding:120px 20px;
+  background:linear-gradient(to right,var(--primary),var(--primary-light));
+  color:white;
+}
+
+.cta-section h2{
+  font-size:2.5rem;
+  margin-bottom:20px;
+}
+
+.cta-section p{
+  margin-bottom:40px;
+  opacity:0.9;
 }
 
 footer{
   text-align:center;
-  padding:40px 20px;
+  padding:40px;
   color:var(--muted);
-  border-top:1px solid rgba(255,255,255,0.05);
+  border-top:1px solid #E2E8F0;
 }
 
 @media(max-width:768px){
-  h1{font-size:2.5rem;}
-  nav{padding:15px 20px;}
+  nav{padding:20px;}
+  .hero h1{font-size:2.8rem;}
 }
 </style>
 </head>
@@ -161,7 +202,7 @@ footer{
 <body>
 
 <nav>
-  <div><strong>Kaysan Arya</strong></div>
+  <strong>Kaysan Arya</strong>
   <div>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -171,58 +212,83 @@ footer{
 </nav>
 
 <section class="hero">
-  <h1>Kaysan Arya</h1>
-  <p>
-    High school student building digital projects, exploring technology,
-    and growing through leadership and continuous learning.
-  </p>
-  <div class="buttons">
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="#about" class="btn btn-outline">About Me</a>
+  <div>
+    <h1>Building the Future as a <span>Student in Progress</span></h1>
+    <p>
+      High school student exploring technology, leadership, and digital innovation.
+      Welcome to my professional digital space.
+    </p>
+    <div class="buttons">
+      <a href="#projects" class="btn btn-primary">Explore Projects</a>
+      <a href="#about" class="btn btn-outline">About Me</a>
+    </div>
   </div>
 </section>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a student who believes growth requires stepping out of the comfort zone.
-    Currently exploring technology, digital systems, and leadership development.
-  </p>
+  <div class="section-title">
+    <h2>About Me</h2>
+    <p>Growth demands discomfort. I choose growth.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Learning</h3>
+      <p>Focused on academic excellence and structured self-development.</p>
+    </div>
+    <div class="card">
+      <h3>Building</h3>
+      <p>Creating digital platforms, design works, and technical projects.</p>
+    </div>
+    <div class="card">
+      <h3>Growing</h3>
+      <p>Active in leadership, organization, and competition experiences.</p>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+  <div class="section-title">
+    <h2>Featured Projects</h2>
+    <p>Selected works and ongoing developments.</p>
+  </div>
   <div class="grid">
     <div class="card">
       <h3>ELMO Geo Platform</h3>
-      <p>Geospatial AI-based platform using GeoNode, PostgreSQL, and Docker.</p>
+      <p>Geospatial system built using GeoNode, PostgreSQL, and Docker.</p>
     </div>
     <div class="card">
       <h3>Personal Website</h3>
-      <p>This futuristic portfolio built with modern web fundamentals.</p>
+      <p>This futuristic portfolio deployed via Cloudflare Pages.</p>
     </div>
     <div class="card">
-      <h3>Design & Organization Work</h3>
-      <p>Posters, leadership programs, and school-level initiatives.</p>
+      <h3>School & Design Projects</h3>
+      <p>Posters, initiatives, and organizational programs.</p>
     </div>
   </div>
 </section>
 
 <section id="notes">
-  <h2>Study Notes</h2>
-  <p>
-    Organized learning notes covering mathematics, science, and strategic thinking.
-    Built for clarity and long-term mastery.
-  </p>
+  <div class="section-title">
+    <h2>Study Notes</h2>
+    <p>Structured academic notes and learning summaries.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Let’s Build Something Meaningful</h2>
+  <p>Open for collaboration, learning, and innovation.</p>
+  <a href="#contact" class="btn btn-outline" style="background:white;color:#2563EB;">Contact Me</a>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
+  <div class="section-title">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+  </div>
 </section>
 
 <footer>
-  © 2026 Kaysan Arya — Zynn Cloud. Built with curiosity.
+  © 2026 Kaysan Arya — Zynn Cloud. Built with ambition.
 </footer>
 
 </body>
